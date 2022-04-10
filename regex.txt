@@ -1,0 +1,87 @@
+Regex: Regular Expression
+Website to build and test regular expressions: regex101.com
+Syntax: /pattern/modifiers
+RegExp Constructor:
+	exp = new RegExp(pattern, "i");
+	exp.test(string)
+	exp.exec(string)
+
+
+Assumption:
+digit: 0-9
+letter: a-z A-Z
+capital letter: A-Z
+small letter: a-z
+symbol: any special symbol
+character: letter, digit or symbol
+
+
+
+Modifiers:
+g performs global match
+i performs case-insensitive match
+m performs multiline matching
+
+
+
+Patterns:
+1. [] specifies multiple alternatives for a single character
+[abc] matches a,b or c
+[a-z] matches any character in the range a,...,z
+[g-p] matches any character in the range g,...,p
+[A-Z] matches any character in the range A,...,Z
+[0-9] matches any character in the range 0,...,9
+[a-zA-Z0-9] matches any character in the range a,..,z,A,..,Z,0,...,9
+[#@&] matches # or @ or &
+[a-z][a-z] matches two characters both of which are small letters
+
+
+2. {} specifies no. of repetitions required
+a{5} matches aaaaa
+[a-z]{4} matches any 4-small-letter word
+[a-z]{6,} matches any word with 6 or more small letters
+[a-z]{5,10} matches any word with between 5 and 10 small letters
+
+3. () Group
+(xy)?z matches z or xyz
+
+Metacharacters
+4. \d matches a digit (Ex. \d{11} matches any 11-digit number)
+5. \w matches any letter, digit and underscore
+6. \s matches a whitespace character (space, tab or newline)
+7. \t matches a tab character only
+9. \D find a non-digit character
+8. \W find a non-word character
+10. \S find a non-whitespace character
+
+Quantifiers
+11. + one or more quantifiers
+c+at matches cat, ccat, ..., ccccccat, ...
+
+12. ? zero or one quantifier
+c?at matches at or cat
+
+13. * zero or more quantifiers
+c*at matches at, cat, ccat, ..., ccccccat, ...
+
+
+14. \ escape character
+c\* matches only c* and not ccccc
+
+15. [^] negate notation, indicate a character that should not be matched within the range
+[^a-c] matches any character other than a,b,c
+
+16. . do notation, matches any digit, letter, or symbol except line terminators.
+.{8} matches 8-character password consisting of letters, numbers and symbols.
+
+17. | specifies alternatives
+sat|sit matches sat or sit
+
+
+Starting and ending using ^ and $
+18. ^ placed at the start, this character matches a pattern at the start of a string
+^x matches any string with x in the beginning
+
+19. $ placed at the end, this character matches a pattern at the end of the string
+x$ matches any string with x in the end
+^ask$ strictly matches ask
